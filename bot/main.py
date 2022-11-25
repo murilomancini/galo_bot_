@@ -416,5 +416,50 @@ async def nenem(ctx):
     else:
         await ctx.send('')
 
+@bot.command(pass_context=True)
+async def tome(ctx):
+    if(ctx.voice_client):
+
+        voice = ctx.voice_client
+        source = FFmpegPCMAudio('tome_audio_meme.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    elif(ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        voice = await channel.connect()
+        source = FFmpegPCMAudio('tome_audio_meme.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    else:
+        await ctx.send('')
+
+@bot.command(pass_context=True)
+async def corte(ctx):
+    if(ctx.voice_client):
+
+        voice = ctx.voice_client
+        source = FFmpegPCMAudio('CORTE_RAPIDO_-_TRAMONTINA.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    elif(ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        voice = await channel.connect()
+        source = FFmpegPCMAudio('CORTE_RAPIDO_-_TRAMONTINA.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    else:
+        await ctx.send('')
+
+@bot.command(pass_context=True)
+async def cazabe(ctx):
+    if(ctx.voice_client):
+
+        voice = ctx.voice_client
+        source = FFmpegPCMAudio('Risada_do_Carlos_Alberto_de_Nobrega.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    elif(ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        voice = await channel.connect()
+        source = FFmpegPCMAudio('Risada_do_Carlos_Alberto_de_Nobrega.mp3', executable=FFMPEG_PATH)
+        player = voice.play(source)
+    else:
+        await ctx.send('')
+
 server.server()
 bot.run(TOKEN)
